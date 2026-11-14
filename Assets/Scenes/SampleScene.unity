@@ -432,7 +432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   ringObstaclePrefab: {fileID: 3685682839388772385, guid: bee709f684f1264408d8705e5259d7e2, type: 3}
-  obstacleSpawnBasePosition: {x: 0, y: 0, z: 50}
+  obstacleSpawnBasePosition: {x: 0, y: 1.75, z: 50}
   obstacleMoveVectorPerSecond: {x: 0, y: 0, z: -1}
 --- !u!4 &470070481
 Transform:

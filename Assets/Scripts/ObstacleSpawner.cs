@@ -15,7 +15,7 @@ public class ObstacleSpawner : MonoBehaviour
     void Update()
     {
         // spawn new rings
-        if (((int) Random.Range(0f, 500f)) == 42)
+        if (((int) Random.Range(0f, 250f)) == 42)
         {
             GameObject newObstacle = Instantiate(ringObstaclePrefab, obstacleSpawnBasePosition, Quaternion.identity);
             newObstacle.transform.parent = transform;
