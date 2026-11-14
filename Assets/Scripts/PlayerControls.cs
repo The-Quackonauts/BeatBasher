@@ -15,6 +15,8 @@ public class PlayerControls : MonoBehaviour
     private float lastTrigger = -999f;
     private bool armed = true;
 
+    public int headbangCount = 0;
+
     void Start()
     {
         lastPitch = transform.localEulerAngles.x;
@@ -50,6 +52,7 @@ public class PlayerControls : MonoBehaviour
         {
             armed = false;
             lastTrigger = now;
+            headbangCount++;
             Restart();
         }
     }
