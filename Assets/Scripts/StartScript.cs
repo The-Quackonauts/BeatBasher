@@ -11,12 +11,12 @@ public class StartScript : MonoBehaviour
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("MainCamera");
-        startingHeadBangCount = player.GetComponent<PlayerControls>().headbangCount;
+        startingHeadBangCount = player.GetComponent<HeadBangDetector>().headbangCount;
     }
 
     private void Update()
     {
-        if ((player.GetComponent<PlayerControls>().headbangCount > startingHeadBangCount) && (gameStarting == false))
+        if ((player.GetComponent<HeadBangDetector>().headbangCount > startingHeadBangCount) && (gameStarting == false))
         {
             gameStarting = true;
             StartGame();

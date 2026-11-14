@@ -1,10 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class PlayerControls : MonoBehaviour
+public class HeadBangDetector : MonoBehaviour
 {
-    public AudioSource music;
+    public AudioSource bashSoundEffect;
 
     public float angleThreshold = 25f;
     public float timeWindow = 0.15f;
@@ -59,7 +58,7 @@ public class PlayerControls : MonoBehaviour
 
     void Restart()
     {
-        music.Stop();
-        music.Play();
+        bashSoundEffect.Stop();
+        bashSoundEffect.Play();
     }
 }
