@@ -1,25 +1,49 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MusicManager : MonoBehaviour
 {
 
     public AudioSource music;
 
-    [SerializeField] public float musicOffset = 5000f;
-    private float musicCurrentTime = 0f;
+    [SerializeField] public float musicOffsetSeconds = 5f;
+    private float musicCurrentTimeSeconds = 0f;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        music.Play();
-        music.volume = 0;
+        music.PlayDelayed(musicOffsetSeconds);
+
+        musicCurrentTimeSeconds = 0 - musicOffsetSeconds;
     }
 
     // Update is called once per frame
     void Update()
     {
-        musicCurrentTime += Time.deltaTime;
-        UnityEngine.Debug.Log(musicCurrentTime);
+        if(musicCurrentTimeSeconds < 0)
+        {
+            musicCurrentTimeSeconds += Time.deltaTime;
+        }
+        else
+        {
+            musicCurrentTimeSeconds = music.time;
+        }
+
+        endOfSong();
     }
+
+    public float getMusicCurrentTime()
+    {
+        return musicCurrentTimeSeconds;
+    }
+
+    public void endOfSong()
+    {
+        if (!music.isPlaying)
+        {
+            SceneManager.LoadScene(0);
+        }
+    }
+
 }
