@@ -24,7 +24,7 @@ public class WallObstacle : MonoBehaviour, IObstacle
         // hit wall?
         if (transform.position.z <= 0)
         {
-            PlayerControls player = FindFirstObjectByType<PlayerControls>();
+            HeadBangDetector player = FindFirstObjectByType<HeadBangDetector>();
             if (wallCollider.bounds.Contains(player.transform.position))
             {
                 LifeManager lifeManager = FindFirstObjectByType<LifeManager>();

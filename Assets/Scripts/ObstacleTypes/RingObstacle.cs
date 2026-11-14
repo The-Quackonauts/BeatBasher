@@ -24,7 +24,7 @@ public class RingObstacle : MonoBehaviour, IObstacle
         // passed through / missed ring?
         if (transform.position.z <= 0)
         {
-            PlayerControls player = FindFirstObjectByType<PlayerControls>();
+            HeadBangDetector player = FindFirstObjectByType<HeadBangDetector>();
 
             if (!ringPassthroughCollider.bounds.Contains(player.transform.position))
             {
