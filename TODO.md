@@ -9,6 +9,10 @@
   - [ ] block that stays a little bit, has a number on it, every head bash counts it down. destroy it. if you dont it eventually turns red and explodes
   - [ ] some obstacle to avoid, your head shouldnt be in there
 - [ ] MusicManager - plays song, has a function that always returns current millisecond
+	- customizable start wait time, milliseconds start negative.
+	- when you headbang play noise not song
+	- headbang detector -> seperate cause headbangs are used for gameplay & menus
+	- after song is done get booted into main menu
 - [ ] LevelManager - has a schedule of what type of obstacle to spawn at what millisecond (makes sure that considering speed it will arrive then, doesnt just spawn it at that millisecond). also has info on how quick everything should be going
 - [ ] LifeManager - gets displayed on hud & reduced when an obstacle is failed
 
