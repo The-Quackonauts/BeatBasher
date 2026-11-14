@@ -318,6 +318,8 @@ MonoBehaviour:
       m_Priority: 0
     m_Reference: {fileID: 0}
   music: {fileID: 1570881140}
+  angleThreshold: 25
+  timeWindow: 0.15
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
