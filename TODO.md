@@ -2,7 +2,7 @@
 
 (not any list, THE LIST)
 
-- [ ] modify default template, get rid of all the trash (moving around, hands, objects, allat)
+- [x] modify default template, get rid of all the trash (moving around, hands, objects, allat)
 - [ ] different obstacles - check with levelmanager how quick to move towards players, and a seperate thing for when passed the player - e.g. reduce life
   - [ ] Tube obstacle (buncha rings, you gotta have your head inside them
   - [ ] one ring - have your head inside
