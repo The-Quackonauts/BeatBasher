@@ -306,9 +306,26 @@ MonoBehaviour:
         m_Groups: 
         m_Action: Reset Button
         m_Flags: 0
+      - m_Name: 
+        m_Id: c7ac0803-ee24-4a31-941a-fd0733bbf541
+        m_Path: <QuestTouchPlusController>{RightHand}/primaryButton
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Reset Button
+        m_Flags: 0
+      - m_Name: 
+        m_Id: 5f15cf13-6451-4537-9987-3dd2817036fa
+        m_Path: <OculusTouchController>{RightHand}/triggerTouched
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Reset Button
+        m_Flags: 0
       m_Flags: 0
       m_Priority: 0
     m_Reference: {fileID: 0}
+  music: {fileID: 1570881140}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
