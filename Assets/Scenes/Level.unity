@@ -447,7 +447,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72adfee2eb72206499f411e976c932eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  ringObstaclePrefab: {fileID: 3685682839388772385, guid: bee709f684f1264408d8705e5259d7e2, type: 3}
+  obstaclePrefabs:
+  - {fileID: 3685682839388772385, guid: bee709f684f1264408d8705e5259d7e2, type: 3}
+  - {fileID: 3685682839388772385, guid: 751eb13ef23eaea46b48b9db4fc5c30f, type: 3}
   obstacleSpawnBasePosition: {x: 0, y: 1.75, z: 20}
   obstacleMoveVectorPerSecond: {x: 0, y: 0, z: -2}
 --- !u!4 &470070481

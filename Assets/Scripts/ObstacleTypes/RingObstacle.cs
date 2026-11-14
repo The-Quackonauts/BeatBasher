@@ -6,7 +6,6 @@ public class RingObstacle : MonoBehaviour, IObstacle
     [SerializeField] private float cleanupAfter = -3;
 
     private bool ringPassed = false;
-    private bool passedThroughRing = false;
 
     public bool ShouldBeCleanedUp()
     {
@@ -26,9 +25,8 @@ public class RingObstacle : MonoBehaviour, IObstacle
         if (transform.position.z <= 0)
         {
             PlayerControls player = FindFirstObjectByType<PlayerControls>();
-            passedThroughRing = ringPassthroughCollider.bounds.Contains(player.transform.position);
 
-            if (!passedThroughRing)
+            if (!ringPassthroughCollider.bounds.Contains(player.transform.position))
             {
                 LifeManager lifeManager = FindFirstObjectByType<LifeManager>();
                 lifeManager.Lives = lifeManager.Lives - 1;

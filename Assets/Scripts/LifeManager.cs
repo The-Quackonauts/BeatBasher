@@ -12,8 +12,7 @@ public class LifeManager : MonoBehaviour
         set 
         {
             lives = value;
-            livesDisplayText.text = "Lives: " + lives;
-            // TODO: death check & restart
+            livesDisplayText.text = "Lives left: " + lives;
         }
     }
 }
