@@ -7,18 +7,24 @@ public class WallObstacle : MonoBehaviour, IObstacle
     private bool wallPassed = false;
 
     private GameObject colourManager;
-    private Renderer wallRenderer;
+    private Renderer[] wallRenderer;
 
     private void Awake()
     {
-        wallRenderer = GetComponentInChildren<Renderer>();
+        wallRenderer = GetComponentsInChildren<Renderer>();
         colourManager = GameObject.FindGameObjectWithTag("ColourManager");
     }
 
 
     public void Configure(ObstacleEvent obstacleEvent) 
     {
-        wallRenderer.material.SetColor("_EmissionColor", colourManager.GetComponent<ColourManager>().getCurrentColour() * 100); 
+        foreach (Renderer renderer in wallRenderer)
+        {
+            foreach(Material material in renderer.materials)
+            { 
+                renderer.material.SetColor("_EmissionColor", colourManager.GetComponent<ColourManager>().getCurrentColour() * 100);
+            }
+        }
     }
 
     public bool ShouldMoveTowardsPlayer()
