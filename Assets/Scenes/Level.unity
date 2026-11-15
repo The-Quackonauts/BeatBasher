@@ -451,7 +451,6 @@ MonoBehaviour:
   - rid: 1000000000000000167
   - rid: 1000000000000000168
   - rid: 1000000000000000169
-  - rid: 1000000000000000170
   references:
     version: 2
     RefIds:
@@ -1518,15 +1517,7 @@ MonoBehaviour:
     - rid: 1000000000000000169
       type: {class: BangEvent, ns: , asm: Assembly-CSharp}
       data:
-        arrivalTimeSeconds: 195.38
-        x: 0.00
-        y: 1.43
-        requiredBangs: 2
-        allowedSeconds: 1.10
-    - rid: 1000000000000000170
-      type: {class: BangEvent, ns: , asm: Assembly-CSharp}
-      data:
-        arrivalTimeSeconds: 197.63
+        arrivalTimeSeconds: 195.87
         x: 0.00
         y: 1.43
         requiredBangs: 1
