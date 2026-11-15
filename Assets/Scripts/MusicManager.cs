@@ -12,6 +12,8 @@ public class MusicManager : MonoBehaviour
     private float musicCurrentTimeSeconds = 0f;
     private int displayedSecond = -1;
 
+    GameObject sceneChanger;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -48,11 +50,12 @@ public class MusicManager : MonoBehaviour
         return musicCurrentTimeSeconds;
     }
 
-    public void endOfSong()
+    private void endOfSong()
     {
         if (!music.isPlaying)
         {
-            SceneManager.LoadScene(0);
+            sceneChanger = GameObject.FindGameObjectWithTag("SceneManager");
+            sceneChanger.GetComponent<SceneChanger>().WinGame();
         }
     }
 

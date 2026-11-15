@@ -7,14 +7,37 @@
   - [x] one ring - have your head inside
   - [x] block that stays a little bit, has a number on it, every head bash counts it down. destroy it. if you dont it eventually turns red and explodes
   - [x] some obstacle to avoid, your head shouldnt be in there
-- [ ] MusicManager - plays song, has a function that always returns current millisecond
+- [x] MusicManager - plays song, has a function that always returns current millisecond
 	- [x] customizable start wait time, milliseconds start negative.
 	- [x] when you headbang play noise not song
 	- [x] headbang detector -> seperate cause headbangs are used for gameplay & menus
-	- [ ] win screen when you finish song -> headbang -> main menu
+	- [x] win screen when you finish song -> headbang -> main menu
 - [x] LevelManager - has a schedule of what type of obstacle to spawn at what millisecond (makes sure that considering speed it will arrive then, doesnt just spawn it at that millisecond). also has info on how quick everything should be going
 - [x] LifeManager - gets displayed on hud & reduced when an obstacle is failed
 	- [x] display lives
 	- [x] decrement lives when hitting obstacle
-	- [ ] game over screen when you lose -> headbang -> main menu
+	- [x] game over screen when you lose -> headbang -> main menu
 - [x] main menu, headbang to start game
+
+
+# POLISH
+
+## calum
+ - [ ] have the rings be rings and all the obstacles be actual shapes
+ - [ ] glow obstacles that rotate colour 
+ - [ ] first obstacle has little crosses to show have to go through it, and the wall 
+ - [ ] correct font for time display, and no time: its very apparent
+ - [ ] explosion when you headbang too slowly
+
+## freddy
+ - [ ] Lives with Hearts that stop glowing when theyre gone
+ - [ ] get rid of the text in the bangs once theyre completed as well
+ - [ ] score system
+ - [ ] countdown before things start
+ - [ ] improved yeah! whoo! wow! sound effects when you headbang
+ - [ ] basalt deltas dust air effect
+ - [ ] sound effect for losing, winning, starting game, passing through a ring successfully, missing a ring, hitting a wall
+
+
+
+- [ ] build and publish
