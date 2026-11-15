@@ -4,9 +4,19 @@ public class RingObstacle : MonoBehaviour, IObstacle
 {
     [SerializeField] private BoxCollider ringPassthroughCollider;
 
+    private GameObject colourManager;
+    private Renderer ringRenderer;
     private bool ringPassed = false;
 
-    public void Configure(ObstacleEvent obstacleEvent) { }
+    private void Awake()
+    {
+        ringRenderer = GetComponentInChildren<Renderer>();
+        colourManager = GameObject.FindGameObjectWithTag("ColourManager");
+    }
+    public void Configure(ObstacleEvent obstacleEvent) 
+    {
+        ringRenderer.material.SetColor("_EmissionColor", colourManager.GetComponent<ColourManager>().getCurrentColour() * 100);
+    }
 
     public bool ShouldMoveTowardsPlayer()
     {

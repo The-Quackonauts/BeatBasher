@@ -119,6 +119,23 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &92055514 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6520132859288591943, guid: 158d5590b7a2feb4c8aa27728b3d0e7d, type: 3}
+  m_PrefabInstance: {fileID: 257183068}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &92055519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92055514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b50eec87f4f2a34bbb5b0d46435ce8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NeonStrip
 --- !u!1001 &257183068
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -127,6 +144,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2784532355330498976, guid: 158d5590b7a2feb4c8aa27728b3d0e7d, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 962c8979420a1784d9c1af0303fc4f6c, type: 2}
+    - target: {fileID: 3596910744223885917, guid: 158d5590b7a2feb4c8aa27728b3d0e7d, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 962c8979420a1784d9c1af0303fc4f6c, type: 2}
+    - target: {fileID: 4158988217262101995, guid: 158d5590b7a2feb4c8aa27728b3d0e7d, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 962c8979420a1784d9c1af0303fc4f6c, type: 2}
     - target: {fileID: 4442041189772802880, guid: 158d5590b7a2feb4c8aa27728b3d0e7d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -49
@@ -167,6 +196,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4604170088466201337, guid: 158d5590b7a2feb4c8aa27728b3d0e7d, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 962c8979420a1784d9c1af0303fc4f6c, type: 2}
     - target: {fileID: 5611496834265634907, guid: 158d5590b7a2feb4c8aa27728b3d0e7d, type: 3}
       propertyPath: m_Name
       value: Room
@@ -174,8 +207,37 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6520132859288591943, guid: 158d5590b7a2feb4c8aa27728b3d0e7d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 92055519}
+    - targetCorrespondingSourceObject: {fileID: 3766713918205799513, guid: 158d5590b7a2feb4c8aa27728b3d0e7d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 952125555}
+    - targetCorrespondingSourceObject: {fileID: 4964430464745536311, guid: 158d5590b7a2feb4c8aa27728b3d0e7d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 257183070}
+    - targetCorrespondingSourceObject: {fileID: 4942349380235598823, guid: 158d5590b7a2feb4c8aa27728b3d0e7d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 519433555}
   m_SourcePrefab: {fileID: 100100000, guid: 158d5590b7a2feb4c8aa27728b3d0e7d, type: 3}
+--- !u!1 &257183069 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4964430464745536311, guid: 158d5590b7a2feb4c8aa27728b3d0e7d, type: 3}
+  m_PrefabInstance: {fileID: 257183068}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &257183070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257183069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b50eec87f4f2a34bbb5b0d46435ce8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NeonStrip
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1765,6 +1827,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &519433550 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4942349380235598823, guid: 158d5590b7a2feb4c8aa27728b3d0e7d, type: 3}
+  m_PrefabInstance: {fileID: 257183068}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &519433555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519433550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b50eec87f4f2a34bbb5b0d46435ce8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NeonStrip
 --- !u!1 &535766515
 GameObject:
   m_ObjectHideFlags: 0
@@ -1849,6 +1928,51 @@ RectTransform:
   m_AnchoredPosition: {x: 0.062, y: 0.689}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &828774482
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 828774484}
+  - component: {fileID: 828774483}
+  m_Layer: 0
+  m_Name: ColourChanger
+  m_TagString: ColourManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &828774483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828774482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63cabb2632609a84ebc0b2d33030ab73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColourManager
+  colourMaterial: {fileID: 2100000, guid: 962c8979420a1784d9c1af0303fc4f6c, type: 2}
+--- !u!4 &828774484
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828774482}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -49, y: -16.40043, z: 226.69748}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1898,6 +2022,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &952125550 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3766713918205799513, guid: 158d5590b7a2feb4c8aa27728b3d0e7d, type: 3}
+  m_PrefabInstance: {fileID: 257183068}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &952125555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952125550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b50eec87f4f2a34bbb5b0d46435ce8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NeonStrip
 --- !u!1 &1033126037
 GameObject:
   m_ObjectHideFlags: 0
@@ -2286,7 +2427,6 @@ MonoBehaviour:
   timeInSongText: {fileID: 1682843456}
   countdownText: {fileID: 750000000000000003}
   heartsDisplay: {fileID: 658791135}
-  roomLineMaterial: {fileID: 2100000, guid: 60152d43280d1df47b30d465a324ed75, type: 2}
   musicOffsetSeconds: 10
 --- !u!1001 &1652710375
 PrefabInstance:
@@ -3185,3 +3325,4 @@ SceneRoots:
   - {fileID: 1652710375}
   - {fileID: 257183068}
   - {fileID: 535766517}
+  - {fileID: 828774484}

@@ -16,12 +16,26 @@ public class BangObstacle : MonoBehaviour, IObstacle
     private int previousHeadBangCount = 0;
     private float headbangingStartedTimestamp;
 
+    private GameObject colourManager;
+    private Renderer[] bangRenderer;
+
+    private void Awake()
+    {
+        bangRenderer = GetComponentsInChildren<Renderer>();
+        colourManager = GameObject.FindGameObjectWithTag("ColourManager");
+    }
+
     public void Configure(ObstacleEvent obstacleEvent)
     {
         BangEvent bangEvent = (BangEvent)obstacleEvent;
         headBangLeftToDo = bangEvent.requiredBangs;
         maximumTimeAllowed = bangEvent.allowedSeconds;
-        bangText.text = "BANG!\n" + headBangLeftToDo;
+        bangText.text ="\n" + headBangLeftToDo;
+
+        foreach (Renderer renderer in bangRenderer)
+        {
+            renderer.material.SetColor("_EmissionColor", colourManager.GetComponent<ColourManager>().getCurrentColour() * 100);
+        }
     }
 
     public bool ShouldMoveTowardsPlayer()
@@ -66,7 +80,7 @@ public class BangObstacle : MonoBehaviour, IObstacle
         if (newHeadBangs > 0 && playerIsInTheCollider)
         {
             headBangLeftToDo = Mathf.Max(0, headBangLeftToDo - newHeadBangs);
-            bangText.text = "BANG!\n" + headBangLeftToDo;
+            bangText.text = "\n" + headBangLeftToDo;
         }
         previousHeadBangCount = currentHeadBangTotal;
 

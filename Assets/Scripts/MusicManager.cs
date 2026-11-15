@@ -8,7 +8,6 @@ public class MusicManager : MonoBehaviour
     [SerializeField] private TextMeshPro timeInSongText;
     [SerializeField] private TextMeshPro countdownText;
     [SerializeField] private GameObject heartsDisplay;
-    [SerializeField] private Material roomLineMaterial;
 
     [SerializeField] public float musicOffsetSeconds = 10f;
     private float musicCurrentTimeSeconds = 0f;
@@ -25,7 +24,7 @@ public class MusicManager : MonoBehaviour
     void Start()
     {
         roomLines = System.Array.FindAll(GameObject.Find("Room").GetComponentsInChildren<MeshRenderer>(true),
-            renderer => renderer.sharedMaterial == roomLineMaterial);
+            renderer => renderer.CompareTag("NeonStrips"));
         foreach (var line in roomLines) line.enabled = false;
         heartsDisplay.SetActive(false);
         timeInSongText.gameObject.SetActive(false);
