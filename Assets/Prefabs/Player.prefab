@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.XR.LegacyInputHelpers::UnityEditor.XR.LegacyInputHelpers.CameraOffset
   m_CameraFloorOffsetObject: {fileID: 7642594317133657323}
   m_RequestedTrackingMode: 0
-  m_TrackingOriginMode: 1
+  m_TrackingOriginMode: 2
   m_TrackingSpace: 0
   m_CameraYOffset: 1.36144
 --- !u!1 &3288055934893704477
