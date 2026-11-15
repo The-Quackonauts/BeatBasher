@@ -79,13 +79,17 @@ public class BangObstacle : MonoBehaviour, IObstacle
         int newHeadBangs = currentHeadBangTotal - previousHeadBangCount;
         if (newHeadBangs > 0 && playerIsInTheCollider)
         {
-            headBangLeftToDo = Mathf.Max(0, headBangLeftToDo - newHeadBangs);
+            int countedBangs = Mathf.Min(newHeadBangs, headBangLeftToDo);
+            ScoreManager score = FindFirstObjectByType<ScoreManager>();
+            for (int i = 0; i < countedBangs; i++) score.RecordSuccess(10);
+            headBangLeftToDo -= countedBangs;
             bangText.text = "\n" + headBangLeftToDo;
         }
         previousHeadBangCount = currentHeadBangTotal;
 
         if (headBangLeftToDo <= 0)
         {
+            FindFirstObjectByType<ScoreManager>().RecordSuccess(25);
             wallToHideOnceCompleted.SetActive(false);
             bangText.gameObject.SetActive(false);
             headBangOngoing = false;

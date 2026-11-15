@@ -1,8 +1,10 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
+    [SerializeField] private TextMeshPro finalScoreText;
     GameObject player;
     private bool sceneChanging = false;
     private int startingHeadBangCount = 0;
@@ -12,6 +14,12 @@ public class SceneChanger : MonoBehaviour
         sceneChanging = false;
         player = GameObject.FindGameObjectWithTag("MainCamera");
         startingHeadBangCount = player.GetComponent<HeadBangDetector>().headbangCount;
+    }
+
+    private void Start()
+    {
+        if (finalScoreText != null)
+            finalScoreText.text = $"Score: {ScoreManager.LastScore}";
     }
 
     private void Update()

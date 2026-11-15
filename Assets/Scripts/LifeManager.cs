@@ -7,24 +7,35 @@ public class LifeManager : MonoBehaviour
     private const int MaxLives = 5;
     private static readonly int EmissionColor = Shader.PropertyToID("_EmissionColor");
     private static readonly int BaseColor = Shader.PropertyToID("_BaseColor");
-    private static readonly Color SpentHeart = new Color(0.35f, 0.06f, 0.06f, 1f);
-
     GameObject sceneChanger;
 
     private int lives = MaxLives;
+    private ColourManager colourManager;
+    private Color displayedColour;
 
     private void Awake()
     {
+        colourManager = FindFirstObjectByType<ColourManager>();
         UpdateHearts();
+    }
+
+    private void Update()
+    {
+        if (colourManager.getCurrentColour() != displayedColour) UpdateHearts();
     }
 
     private void UpdateHearts()
     {
-        var properties = new MaterialPropertyBlock();
-        properties.SetColor(EmissionColor, Color.black);
-        properties.SetColor(BaseColor, SpentHeart);
+        displayedColour = colourManager.getCurrentColour();
+        var lit = new MaterialPropertyBlock();
+        lit.SetColor(EmissionColor, displayedColour * 100f);
+        lit.SetColor(BaseColor, Color.white);
+        var spent = new MaterialPropertyBlock();
+        spent.SetColor(EmissionColor, Color.black);
+        spent.SetColor(BaseColor, new Color(displayedColour.r * 0.3f,
+            displayedColour.g * 0.3f, displayedColour.b * 0.3f, 1f));
         for (int i = 0; i < hearts.Length; i++)
-            hearts[i].SetPropertyBlock(i < lives ? null : properties);
+            hearts[i].SetPropertyBlock(i < lives ? lit : spent);
     }
 
     public int Lives
@@ -32,7 +43,9 @@ public class LifeManager : MonoBehaviour
         get { return lives; }
         set
         {
-            lives = Mathf.Clamp(value, 0, MaxLives);
+            int nextLives = Mathf.Clamp(value, 0, MaxLives);
+            if (nextLives < lives) FindFirstObjectByType<ScoreManager>().ResetStreak();
+            lives = nextLives;
             UpdateHearts();
             if (lives <= 0)
             {

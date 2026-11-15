@@ -32,9 +32,11 @@
 ## freddy
  - [x] Lives with Hearts that stop glowing when theyre gone
  - [x] get rid of the text in the bangs once theyre completed as well
- - [ ] score system
+ - [x] score system
  - [x] countdown before things start
  - [x] improved yeah! whoo! wow! sound effects when you headbang
+ - [ ] video with little voiceover
+
  - [ ] basalt deltas dust air effect
  - [ ] sound effect for losing, winning, starting game, passing through a ring successfully, missing a ring, hitting a wall
 

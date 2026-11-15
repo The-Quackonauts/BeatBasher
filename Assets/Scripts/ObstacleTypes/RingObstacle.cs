@@ -31,6 +31,7 @@ public class RingObstacle : MonoBehaviour, IObstacle
         Bounds opening = ringPassthroughCollider.bounds;
         if (opening.Contains(head))
         {
+            FindFirstObjectByType<ScoreManager>().RecordSuccess(10);
             ringPassed = true;
         }
         else if (opening.max.z < head.z)

@@ -45,6 +45,7 @@ public class WallObstacle : MonoBehaviour, IObstacle
         }
         else if (wall.max.z < head.z)
         {
+            FindFirstObjectByType<ScoreManager>().RecordSuccess(10);
             wallPassed = true;
         }
     }

@@ -8,6 +8,7 @@ public class MusicManager : MonoBehaviour
     [SerializeField] private TextMeshPro timeInSongText;
     [SerializeField] private TextMeshPro countdownText;
     [SerializeField] private GameObject heartsDisplay;
+    [SerializeField] private ScoreManager scoreDisplay;
 
     [SerializeField] public float musicOffsetSeconds = 10f;
     private float musicCurrentTimeSeconds = 0f;
@@ -28,6 +29,7 @@ public class MusicManager : MonoBehaviour
         foreach (var line in roomLines) line.enabled = false;
         heartsDisplay.SetActive(false);
         timeInSongText.gameObject.SetActive(false);
+        scoreDisplay.SetVisible(false);
 
         countdownText.gameObject.SetActive(true);
         countdownMaterial = new Material(countdownText.fontSharedMaterial);
@@ -50,6 +52,7 @@ public class MusicManager : MonoBehaviour
                 countdownText.gameObject.SetActive(false);
                 timeInSongText.gameObject.SetActive(true);
                 heartsDisplay.SetActive(true);
+                scoreDisplay.SetVisible(true);
                 foreach (var line in roomLines) line.enabled = true;
             }
             else

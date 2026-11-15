@@ -1164,6 +1164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cbcdde1aa0834f44987cd0e0e61abec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
+  finalScoreText: {fileID: 273773541}
 --- !u!4 &1410163087
 Transform:
   m_ObjectHideFlags: 0
