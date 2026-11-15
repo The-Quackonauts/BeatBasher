@@ -38,7 +38,7 @@ public class MusicManager : MonoBehaviour
         int second = Mathf.Max(0, Mathf.FloorToInt(musicCurrentTimeSeconds));
         if (second != displayedSecond)
         {
-            timeInSongText.text = $"Time: {second / 60:00}:{second % 60:00}";
+            timeInSongText.text = $"{second / 60:00}:{second % 60:00}";
             displayedSecond = second;
         }
 
