@@ -3,14 +3,8 @@ using UnityEngine;
 public class WallObstacle : MonoBehaviour, IObstacle
 {
     [SerializeField] private BoxCollider wallCollider;
-    [SerializeField] private float cleanupAfter = -3;
 
     private bool wallPassed = false;
-
-    public bool ShouldBeCleanedUp()
-    {
-        return transform.position.z < cleanupAfter;
-    }
 
     public bool ShouldMoveTowardsPlayer()
     {
@@ -28,7 +22,7 @@ public class WallObstacle : MonoBehaviour, IObstacle
             if (wallCollider.bounds.Contains(player.transform.position))
             {
                 LifeManager lifeManager = FindFirstObjectByType<LifeManager>();
-                lifeManager.Lives = lifeManager.Lives - 1;
+                lifeManager.Lives--;
             }
 
             wallPassed = true;

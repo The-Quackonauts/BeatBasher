@@ -52,6 +52,7 @@ public class HeadBangDetector : MonoBehaviour
             armed = false;
             lastTrigger = now;
             headbangCount++;
+            Debug.Log("BANG!");
             Restart();
         }
     }

@@ -38,7 +38,7 @@ public class ObstacleSpawner : MonoBehaviour
 
             obstacleScript.Tick(Time.fixedDeltaTime);
 
-            if (obstacleScript.ShouldBeCleanedUp())
+            if (child.position.z <= -3)
             {
                 Destroy(child.gameObject);
             }
