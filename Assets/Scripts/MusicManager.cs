@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -5,9 +6,11 @@ public class MusicManager : MonoBehaviour
 {
 
     public AudioSource music;
+    [SerializeField] private TextMeshPro timeInSongText;
 
     [SerializeField] public float musicOffsetSeconds = 5f;
     private float musicCurrentTimeSeconds = 0f;
+    private int displayedSecond = -1;
 
     GameObject sceneChanger;
 
@@ -30,6 +33,13 @@ public class MusicManager : MonoBehaviour
         else
         {
             musicCurrentTimeSeconds = music.time;
+        }
+
+        int second = Mathf.Max(0, Mathf.FloorToInt(musicCurrentTimeSeconds));
+        if (second != displayedSecond)
+        {
+            timeInSongText.text = $"Time: {second / 60:00}:{second % 60:00}";
+            displayedSecond = second;
         }
 
         endOfSong();

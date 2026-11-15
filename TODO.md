@@ -12,13 +12,32 @@
 	- [x] when you headbang play noise not song
 	- [x] headbang detector -> seperate cause headbangs are used for gameplay & menus
 	- [x] win screen when you finish song -> headbang -> main menu
-- [ ] LevelManager - has a schedule of what type of obstacle to spawn at what millisecond (makes sure that considering speed it will arrive then, doesnt just spawn it at that millisecond). also has info on how quick everything should be going
+- [x] LevelManager - has a schedule of what type of obstacle to spawn at what millisecond (makes sure that considering speed it will arrive then, doesnt just spawn it at that millisecond). also has info on how quick everything should be going
 - [x] LifeManager - gets displayed on hud & reduced when an obstacle is failed
 	- [x] display lives
 	- [x] decrement lives when hitting obstacle
 	- [x] game over screen when you lose -> headbang -> main menu
 - [x] main menu, headbang to start game
 
-## potentially
 
-- [ ] Tube obstacle (buncha rings, you gotta have your head inside them)
+# POLISH
+
+## calum
+ - [ ] have the rings be rings and all the obstacles be actual shapes
+ - [ ] glow obstacles that rotate colour 
+ - [ ] first obstacle has little crosses to show have to go through it, and the wall 
+ - [ ] correct font for time display, and no time: its very apparent
+ - [ ] explosion when you headbang too slowly
+
+## freddy
+ - [ ] Lives with Hearts that stop glowing when theyre gone
+ - [ ] get rid of the text in the bangs once theyre completed as well
+ - [ ] score system
+ - [ ] countdown before things start
+ - [ ] improved yeah! whoo! wow! sound effects when you headbang
+ - [ ] basalt deltas dust air effect
+ - [ ] sound effect for losing, winning, starting game, passing through a ring successfully, missing a ring, hitting a wall
+
+
+
+- [ ] build and publish
