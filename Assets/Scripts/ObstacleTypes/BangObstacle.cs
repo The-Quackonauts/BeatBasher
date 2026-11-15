@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -55,12 +56,14 @@ public class BangObstacle : MonoBehaviour, IObstacle
 
             LifeManager lifeManager = FindFirstObjectByType<LifeManager>();
             lifeManager.Lives--;
+            headBangOngoing = false;
         }
 
-        // subtract headbangs if any happened
+        // subtract headbangs if any happened in the collider
+        bool playerIsInTheCollider = bashingCollider.bounds.Contains(GameObject.FindWithTag("MainCamera").transform.position);
         int currentHeadBangTotal = GameObject.FindWithTag("MainCamera").GetComponent<HeadBangDetector>().headbangCount;
         int newHeadBangs = currentHeadBangTotal - previousHeadBangCount;
-        if (newHeadBangs > 0)
+        if (newHeadBangs > 0 && playerIsInTheCollider)
         {
             headBangLeftToDo -= newHeadBangs;
             bangText.text = "BANG!\n" + headBangLeftToDo;
