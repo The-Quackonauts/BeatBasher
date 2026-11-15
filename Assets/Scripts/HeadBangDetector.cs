@@ -4,7 +4,7 @@ using UnityEngine;
 [DefaultExecutionOrder(-100)]
 public class HeadBangDetector : MonoBehaviour
 {
-    public AudioSource bashSoundEffect;
+    public AudioSource headbangSoundEffect;
 
     public float angleThreshold = 25f;
     public float timeWindow = 0.15f;
@@ -13,6 +13,7 @@ public class HeadBangDetector : MonoBehaviour
 
     private float lastPitch;
     private float lastTrigger = -999f;
+    private int quickHeadbangs;
     private bool armed = true;
 
     public int headbangCount = 0;
@@ -38,7 +39,11 @@ public class HeadBangDetector : MonoBehaviour
 
         // Alternatively, rearm after 1 second
         if (now - lastTrigger >= 1f)
+        {
             armed = true;
+            quickHeadbangs = 0;
+            headbangSoundEffect.pitch = 1f;
+        }
 
         history.Enqueue(new Vector2(now, pitch));
 
@@ -51,16 +56,13 @@ public class HeadBangDetector : MonoBehaviour
             Mathf.DeltaAngle(history.Peek().y, pitch) >= angleThreshold)
         {
             armed = false;
+            headbangSoundEffect.pitch = 1f + 0.08f * quickHeadbangs;
+            quickHeadbangs = Mathf.Min(quickHeadbangs + 1, 6);
             lastTrigger = now;
             headbangCount++;
             Debug.Log("BANG!");
-            Restart();
+            headbangSoundEffect.Stop();
+            headbangSoundEffect.Play();
         }
-    }
-
-    void Restart()
-    {
-        bashSoundEffect.Stop();
-        bashSoundEffect.Play();
     }
 }

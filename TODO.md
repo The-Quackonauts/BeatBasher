@@ -34,7 +34,7 @@
  - [x] get rid of the text in the bangs once theyre completed as well
  - [ ] score system
  - [x] countdown before things start
- - [ ] improved yeah! whoo! wow! sound effects when you headbang
+ - [x] improved yeah! whoo! wow! sound effects when you headbang
  - [ ] basalt deltas dust air effect
  - [ ] sound effect for losing, winning, starting game, passing through a ring successfully, missing a ring, hitting a wall
 

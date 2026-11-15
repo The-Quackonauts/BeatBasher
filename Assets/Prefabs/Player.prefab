@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 6624979855416549369}
   - component: {fileID: 5697991757214330114}
   m_Layer: 0
-  m_Name: bashSoundEffect
+  m_Name: headbangSoundEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,7 +94,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: eec4d5cb90bba974c9833c92768d7c5b, type: 3}
+  m_Resource: {fileID: 8300000, guid: 6ca70431dfe59624286c6ad5a5768232, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -349,7 +349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce4a639243182e8408dd6dfd6a7692df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HeadBangDetector
-  bashSoundEffect: {fileID: 5697991757214330114}
+  headbangSoundEffect: {fileID: 5697991757214330114}
   angleThreshold: 25
   timeWindow: 0.15
   headbangCount: 0
