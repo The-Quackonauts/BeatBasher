@@ -26,7 +26,7 @@ public class SceneChanger : MonoBehaviour
             }
             else if (currentScene == 2 || currentScene == 3) // lose and win screen
             {
-                EndGame();
+                ResetGame();
             }
         }
     }
@@ -36,7 +36,17 @@ public class SceneChanger : MonoBehaviour
         SceneManager.LoadScene(1);
     }
     
-    public void EndGame()
+    public void LoseGame()
+    {
+        SceneManager.LoadScene(3);
+    }
+
+    public void WinGame()
+    {
+        SceneManager.LoadScene(2);
+    }
+
+    public void ResetGame()
     {
         SceneManager.LoadScene(0);
     }

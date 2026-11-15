@@ -9,6 +9,8 @@ public class MusicManager : MonoBehaviour
     [SerializeField] public float musicOffsetSeconds = 5f;
     private float musicCurrentTimeSeconds = 0f;
 
+    GameObject sceneChanger;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -38,11 +40,12 @@ public class MusicManager : MonoBehaviour
         return musicCurrentTimeSeconds;
     }
 
-    public void endOfSong()
+    private void endOfSong()
     {
         if (!music.isPlaying)
         {
-            SceneManager.LoadScene(0);
+            sceneChanger = GameObject.FindGameObjectWithTag("SceneManager");
+            sceneChanger.GetComponent<SceneChanger>().WinGame();
         }
     }
 
