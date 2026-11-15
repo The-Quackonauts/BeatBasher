@@ -7,6 +7,8 @@ TagManager:
   - LivesManager
   - MusicManager
   - SceneManager
+  - NeonStrips
+  - ColourManager
   layers:
   - Default
   - TransparentFX

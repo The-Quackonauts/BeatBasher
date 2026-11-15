@@ -6,7 +6,20 @@ public class WallObstacle : MonoBehaviour, IObstacle
 
     private bool wallPassed = false;
 
-    public void Configure(ObstacleEvent obstacleEvent) { }
+    private GameObject colourManager;
+    private Renderer wallRenderer;
+
+    private void Awake()
+    {
+        wallRenderer = GetComponentInChildren<Renderer>();
+        colourManager = GameObject.FindGameObjectWithTag("ColourManager");
+    }
+
+
+    public void Configure(ObstacleEvent obstacleEvent) 
+    {
+        wallRenderer.material.SetColor("_EmissionColor", colourManager.GetComponent<ColourManager>().getCurrentColour() * 100); 
+    }
 
     public bool ShouldMoveTowardsPlayer()
     {
