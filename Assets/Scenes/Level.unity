@@ -275,14 +275,1049 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72adfee2eb72206499f411e976c932eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  obstaclePrefabs:
-  - {fileID: 3685682839388772385, guid: bee709f684f1264408d8705e5259d7e2, type: 3}
-  - {fileID: 3685682839388772385, guid: 751eb13ef23eaea46b48b9db4fc5c30f, type: 3}
-  - {fileID: 3685682839388772385, guid: 2644ccfc1ddd9d6498ddce8197f6abc0, type: 3}
-  obstacleSpawnBasePosition: {x: 0, y: 1.75, z: 20}
+  musicManager: {fileID: 1570881142}
+  ringPrefab: {fileID: 3685682839388772385, guid: bee709f684f1264408d8705e5259d7e2, type: 3}
+  wallPrefab: {fileID: 3685682839388772385, guid: 751eb13ef23eaea46b48b9db4fc5c30f, type: 3}
+  bangPrefab: {fileID: 3685682839388772385, guid: 2644ccfc1ddd9d6498ddce8197f6abc0, type: 3}
+  spawnDistance: 20
   obstacleMoveVectorPerSecond: {x: 0, y: 0, z: -2}
-  xAxisRandomOffset: 0.42
-  yAxisDownwardRandomOffset: 0.7
+  schedule:
+  - rid: 1000000000000000001
+  - rid: 1000000000000000002
+  - rid: 1000000000000000003
+  - rid: 1000000000000000004
+  - rid: 1000000000000000005
+  - rid: 1000000000000000006
+  - rid: 1000000000000000007
+  - rid: 1000000000000000008
+  - rid: 1000000000000000009
+  - rid: 1000000000000000010
+  - rid: 1000000000000000011
+  - rid: 1000000000000000012
+  - rid: 1000000000000000013
+  - rid: 1000000000000000014
+  - rid: 1000000000000000015
+  - rid: 1000000000000000016
+  - rid: 1000000000000000017
+  - rid: 1000000000000000018
+  - rid: 1000000000000000019
+  - rid: 1000000000000000020
+  - rid: 1000000000000000021
+  - rid: 1000000000000000022
+  - rid: 1000000000000000023
+  - rid: 1000000000000000024
+  - rid: 1000000000000000025
+  - rid: 1000000000000000026
+  - rid: 1000000000000000027
+  - rid: 1000000000000000028
+  - rid: 1000000000000000029
+  - rid: 1000000000000000030
+  - rid: 1000000000000000031
+  - rid: 1000000000000000032
+  - rid: 1000000000000000033
+  - rid: 1000000000000000034
+  - rid: 1000000000000000035
+  - rid: 1000000000000000036
+  - rid: 1000000000000000037
+  - rid: 1000000000000000038
+  - rid: 1000000000000000039
+  - rid: 1000000000000000040
+  - rid: 1000000000000000041
+  - rid: 1000000000000000042
+  - rid: 1000000000000000043
+  - rid: 1000000000000000044
+  - rid: 1000000000000000045
+  - rid: 1000000000000000046
+  - rid: 1000000000000000047
+  - rid: 1000000000000000048
+  - rid: 1000000000000000049
+  - rid: 1000000000000000050
+  - rid: 1000000000000000051
+  - rid: 1000000000000000052
+  - rid: 1000000000000000053
+  - rid: 1000000000000000054
+  - rid: 1000000000000000055
+  - rid: 1000000000000000056
+  - rid: 1000000000000000057
+  - rid: 1000000000000000058
+  - rid: 1000000000000000059
+  - rid: 1000000000000000060
+  - rid: 1000000000000000061
+  - rid: 1000000000000000062
+  - rid: 1000000000000000063
+  - rid: 1000000000000000064
+  - rid: 1000000000000000065
+  - rid: 1000000000000000066
+  - rid: 1000000000000000067
+  - rid: 1000000000000000068
+  - rid: 1000000000000000069
+  - rid: 1000000000000000070
+  - rid: 1000000000000000071
+  - rid: 1000000000000000072
+  - rid: 1000000000000000073
+  - rid: 1000000000000000074
+  - rid: 1000000000000000075
+  - rid: 1000000000000000076
+  - rid: 1000000000000000077
+  - rid: 1000000000000000078
+  - rid: 1000000000000000079
+  - rid: 1000000000000000080
+  - rid: 1000000000000000081
+  - rid: 1000000000000000082
+  - rid: 1000000000000000083
+  - rid: 1000000000000000084
+  - rid: 1000000000000000085
+  - rid: 1000000000000000086
+  - rid: 1000000000000000087
+  - rid: 1000000000000000088
+  - rid: 1000000000000000089
+  - rid: 1000000000000000090
+  - rid: 1000000000000000091
+  - rid: 1000000000000000092
+  - rid: 1000000000000000093
+  - rid: 1000000000000000094
+  - rid: 1000000000000000095
+  - rid: 1000000000000000096
+  - rid: 1000000000000000097
+  - rid: 1000000000000000098
+  - rid: 1000000000000000099
+  - rid: 1000000000000000100
+  - rid: 1000000000000000101
+  - rid: 1000000000000000102
+  - rid: 1000000000000000103
+  - rid: 1000000000000000104
+  - rid: 1000000000000000105
+  - rid: 1000000000000000106
+  - rid: 1000000000000000107
+  - rid: 1000000000000000108
+  - rid: 1000000000000000109
+  - rid: 1000000000000000110
+  - rid: 1000000000000000111
+  - rid: 1000000000000000112
+  - rid: 1000000000000000113
+  - rid: 1000000000000000114
+  - rid: 1000000000000000115
+  - rid: 1000000000000000116
+  - rid: 1000000000000000117
+  - rid: 1000000000000000118
+  - rid: 1000000000000000119
+  - rid: 1000000000000000120
+  - rid: 1000000000000000121
+  - rid: 1000000000000000122
+  - rid: 1000000000000000123
+  - rid: 1000000000000000124
+  - rid: 1000000000000000125
+  - rid: 1000000000000000126
+  - rid: 1000000000000000127
+  - rid: 1000000000000000128
+  - rid: 1000000000000000129
+  - rid: 1000000000000000130
+  - rid: 1000000000000000131
+  - rid: 1000000000000000132
+  - rid: 1000000000000000133
+  - rid: 1000000000000000134
+  - rid: 1000000000000000135
+  - rid: 1000000000000000136
+  - rid: 1000000000000000137
+  - rid: 1000000000000000138
+  - rid: 1000000000000000139
+  - rid: 1000000000000000140
+  - rid: 1000000000000000141
+  - rid: 1000000000000000142
+  - rid: 1000000000000000143
+  - rid: 1000000000000000144
+  - rid: 1000000000000000145
+  references:
+    version: 2
+    RefIds:
+    - rid: 1000000000000000001
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 6.02
+        x: 0.00
+        y: 1.43
+    - rid: 1000000000000000002
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 12.02
+        x: -0.15
+        y: 1.40
+    - rid: 1000000000000000003
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 13.52
+        x: 0.00
+        y: 1.52
+    - rid: 1000000000000000004
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 15.02
+        x: 0.15
+        y: 1.40
+    - rid: 1000000000000000005
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 18.02
+        x: 0.00
+        y: 1.40
+    - rid: 1000000000000000006
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 21.02
+        x: -0.15
+        y: 1.36
+    - rid: 1000000000000000007
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 22.52
+        x: 0.00
+        y: 1.45
+    - rid: 1000000000000000008
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 24.02
+        x: -0.15
+        y: 1.40
+    - rid: 1000000000000000009
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 25.52
+        x: 0.00
+        y: 1.52
+    - rid: 1000000000000000010
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 27.02
+        x: 0.15
+        y: 1.40
+    - rid: 1000000000000000011
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 30.02
+        x: 0.00
+        y: 1.40
+    - rid: 1000000000000000012
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 33.02
+        x: -0.15
+        y: 1.36
+    - rid: 1000000000000000013
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 34.52
+        x: 0.00
+        y: 1.45
+    - rid: 1000000000000000014
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 36.02
+        x: 0.00
+        y: 1.76
+    - rid: 1000000000000000015
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 37.52
+        x: 0.22
+        y: 1.66
+    - rid: 1000000000000000016
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 39.02
+        x: 0.33
+        y: 1.43
+    - rid: 1000000000000000017
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 40.52
+        x: 0.22
+        y: 1.18
+    - rid: 1000000000000000018
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 42.02
+        x: 0.00
+        y: 1.05
+    - rid: 1000000000000000019
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 43.52
+        x: -0.22
+        y: 1.18
+    - rid: 1000000000000000020
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 45.02
+        x: -0.33
+        y: 1.43
+    - rid: 1000000000000000021
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 46.52
+        x: -0.22
+        y: 1.66
+    - rid: 1000000000000000022
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 48.02
+        x: 0.00
+        y: 1.76
+    - rid: 1000000000000000023
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 49.52
+        x: 0.22
+        y: 1.66
+    - rid: 1000000000000000024
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 51.02
+        x: 0.33
+        y: 1.43
+    - rid: 1000000000000000025
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 52.52
+        x: 0.22
+        y: 1.18
+    - rid: 1000000000000000026
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 54.02
+        x: 0.00
+        y: 1.05
+    - rid: 1000000000000000027
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 55.52
+        x: -0.22
+        y: 1.18
+    - rid: 1000000000000000028
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 57.02
+        x: -0.33
+        y: 1.43
+    - rid: 1000000000000000029
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 58.52
+        x: -0.22
+        y: 1.66
+    - rid: 1000000000000000030
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 60.02
+        x: 0.00
+        y: 1.76
+    - rid: 1000000000000000031
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 61.52
+        x: 0.22
+        y: 1.66
+    - rid: 1000000000000000032
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 63.02
+        x: 0.33
+        y: 1.43
+    - rid: 1000000000000000033
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 64.52
+        x: 0.22
+        y: 1.18
+    - rid: 1000000000000000034
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 66.02
+        x: 0.00
+        y: 1.05
+    - rid: 1000000000000000035
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 67.52
+        x: -0.22
+        y: 1.18
+    - rid: 1000000000000000036
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 69.02
+        x: -0.33
+        y: 1.43
+    - rid: 1000000000000000037
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 70.52
+        x: -0.22
+        y: 1.66
+    - rid: 1000000000000000038
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 72.02
+        x: 0.00
+        y: 1.05
+    - rid: 1000000000000000039
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 73.52
+        x: 0.00
+        y: 1.73
+    - rid: 1000000000000000040
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 75.02
+        x: 0.00
+        y: 1.05
+    - rid: 1000000000000000041
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 76.52
+        x: 0.00
+        y: 1.73
+    - rid: 1000000000000000042
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 78.02
+        x: 0.00
+        y: 1.05
+    - rid: 1000000000000000043
+      type: {class: BangEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 80.05
+        x: 0.00
+        y: 1.43
+        requiredBangs: 2
+        allowedSeconds: 1.10
+    - rid: 1000000000000000044
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 82.52
+        x: 0.00
+        y: 1.43
+    - rid: 1000000000000000045
+      type: {class: BangEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 84.19
+        x: 0.30
+        y: 1.43
+        requiredBangs: 2
+        allowedSeconds: 1.10
+    - rid: 1000000000000000046
+      type: {class: BangEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 87.59
+        x: 0.00
+        y: 1.43
+        requiredBangs: 2
+        allowedSeconds: 1.35
+    - rid: 1000000000000000047
+      type: {class: BangEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 90.20
+        x: -0.30
+        y: 1.43
+        requiredBangs: 2
+        allowedSeconds: 1.10
+    - rid: 1000000000000000048
+      type: {class: BangEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 93.17
+        x: 0.00
+        y: 1.43
+        requiredBangs: 2
+        allowedSeconds: 1.10
+    - rid: 1000000000000000049
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 96.02
+        x: -0.30
+        y: 1.43
+    - rid: 1000000000000000050
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 97.52
+        x: 0.00
+        y: 1.63
+    - rid: 1000000000000000051
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 99.02
+        x: 0.30
+        y: 1.43
+    - rid: 1000000000000000052
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 100.52
+        x: 0.00
+        y: 1.18
+    - rid: 1000000000000000053
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 102.02
+        x: 0.00
+        y: 1.43
+    - rid: 1000000000000000054
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 104.27
+        x: -0.28
+        y: 1.43
+    - rid: 1000000000000000055
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 106.52
+        x: 0.28
+        y: 1.43
+    - rid: 1000000000000000056
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 108.02
+        x: 0.00
+        y: 1.43
+    - rid: 1000000000000000057
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 110.44
+        x: 0.00
+        y: 1.63
+    - rid: 1000000000000000058
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 111.94
+        x: 0.00
+        y: 1.18
+    - rid: 1000000000000000059
+      type: {class: BangEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 114.15
+        x: 0.00
+        y: 1.43
+        requiredBangs: 10
+        allowedSeconds: 4.60
+    - rid: 1000000000000000060
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 120.77
+        x: -0.55
+        y: 1.02
+    - rid: 1000000000000000061
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 120.77
+        x: 0.00
+        y: 1.02
+    - rid: 1000000000000000062
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 120.77
+        x: 0.55
+        y: 1.02
+    - rid: 1000000000000000063
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 123.02
+        x: -0.55
+        y: 1.78
+    - rid: 1000000000000000064
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 123.02
+        x: 0.00
+        y: 1.78
+    - rid: 1000000000000000065
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 123.02
+        x: 0.55
+        y: 1.78
+    - rid: 1000000000000000066
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 125.27
+        x: 0.00
+        y: 0.84
+    - rid: 1000000000000000067
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 125.27
+        x: 0.00
+        y: 1.45
+    - rid: 1000000000000000068
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 125.27
+        x: 0.00
+        y: 2.06
+    - rid: 1000000000000000069
+      type: {class: BangEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 127.98
+        x: 0.00
+        y: 1.43
+        requiredBangs: 3
+        allowedSeconds: 1.35
+    - rid: 1000000000000000070
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 130.52
+        x: -0.55
+        y: 0.84
+    - rid: 1000000000000000071
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 130.52
+        x: 0.00
+        y: 0.84
+    - rid: 1000000000000000072
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 130.52
+        x: 0.55
+        y: 0.84
+    - rid: 1000000000000000073
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 130.52
+        x: -0.55
+        y: 1.45
+    - rid: 1000000000000000074
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 130.52
+        x: 0.55
+        y: 1.45
+    - rid: 1000000000000000075
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 130.52
+        x: -0.55
+        y: 2.06
+    - rid: 1000000000000000076
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 130.52
+        x: 0.00
+        y: 2.06
+    - rid: 1000000000000000077
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 130.52
+        x: 0.55
+        y: 2.06
+    - rid: 1000000000000000078
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 132.02
+        x: 0.00
+        y: 1.43
+    - rid: 1000000000000000079
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 133.52
+        x: -0.55
+        y: 1.02
+    - rid: 1000000000000000080
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 133.52
+        x: 0.00
+        y: 1.02
+    - rid: 1000000000000000081
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 133.52
+        x: 0.55
+        y: 1.02
+    - rid: 1000000000000000082
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 135.02
+        x: 0.00
+        y: 1.67
+    - rid: 1000000000000000083
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 136.52
+        x: -0.55
+        y: 1.78
+    - rid: 1000000000000000084
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 136.52
+        x: 0.00
+        y: 1.78
+    - rid: 1000000000000000085
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 136.52
+        x: 0.55
+        y: 1.78
+    - rid: 1000000000000000086
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 138.02
+        x: 0.00
+        y: 1.12
+    - rid: 1000000000000000087
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 139.52
+        x: 0.00
+        y: 0.84
+    - rid: 1000000000000000088
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 139.52
+        x: 0.00
+        y: 1.45
+    - rid: 1000000000000000089
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 139.52
+        x: 0.00
+        y: 2.06
+    - rid: 1000000000000000090
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 141.02
+        x: 0.36
+        y: 1.43
+    - rid: 1000000000000000091
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 142.52
+        x: -0.36
+        y: 1.43
+    - rid: 1000000000000000092
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 144.02
+        x: 0.00
+        y: 1.43
+    - rid: 1000000000000000093
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 145.52
+        x: -0.55
+        y: 1.02
+    - rid: 1000000000000000094
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 145.52
+        x: 0.00
+        y: 1.02
+    - rid: 1000000000000000095
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 145.52
+        x: 0.55
+        y: 1.02
+    - rid: 1000000000000000096
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 147.02
+        x: 0.00
+        y: 1.67
+    - rid: 1000000000000000097
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 148.52
+        x: -0.55
+        y: 1.78
+    - rid: 1000000000000000098
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 148.52
+        x: 0.00
+        y: 1.78
+    - rid: 1000000000000000099
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 148.52
+        x: 0.55
+        y: 1.78
+    - rid: 1000000000000000100
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 150.02
+        x: 0.00
+        y: 1.12
+    - rid: 1000000000000000101
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 151.52
+        x: 0.00
+        y: 0.84
+    - rid: 1000000000000000102
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 151.52
+        x: 0.00
+        y: 1.45
+    - rid: 1000000000000000103
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 151.52
+        x: 0.00
+        y: 2.06
+    - rid: 1000000000000000104
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 153.02
+        x: 0.36
+        y: 1.43
+    - rid: 1000000000000000105
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 154.52
+        x: -0.36
+        y: 1.43
+    - rid: 1000000000000000106
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 156.02
+        x: 0.00
+        y: 1.43
+    - rid: 1000000000000000107
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 157.52
+        x: -0.55
+        y: 1.02
+    - rid: 1000000000000000108
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 157.52
+        x: 0.00
+        y: 1.02
+    - rid: 1000000000000000109
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 157.52
+        x: 0.55
+        y: 1.02
+    - rid: 1000000000000000110
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 159.02
+        x: 0.00
+        y: 1.67
+    - rid: 1000000000000000111
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 160.52
+        x: -0.55
+        y: 1.78
+    - rid: 1000000000000000112
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 160.52
+        x: 0.00
+        y: 1.78
+    - rid: 1000000000000000113
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 160.52
+        x: 0.55
+        y: 1.78
+    - rid: 1000000000000000114
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 162.02
+        x: 0.00
+        y: 1.12
+    - rid: 1000000000000000115
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 163.52
+        x: 0.00
+        y: 0.84
+    - rid: 1000000000000000116
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 163.52
+        x: 0.00
+        y: 1.45
+    - rid: 1000000000000000117
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 163.52
+        x: 0.00
+        y: 2.06
+    - rid: 1000000000000000118
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 165.02
+        x: 0.36
+        y: 1.43
+    - rid: 1000000000000000119
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 166.52
+        x: -0.36
+        y: 1.43
+    - rid: 1000000000000000120
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 168.02
+        x: 0.00
+        y: 1.43
+    - rid: 1000000000000000121
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 169.52
+        x: -0.55
+        y: 1.02
+    - rid: 1000000000000000122
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 169.52
+        x: 0.00
+        y: 1.02
+    - rid: 1000000000000000123
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 169.52
+        x: 0.55
+        y: 1.02
+    - rid: 1000000000000000124
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 171.02
+        x: 0.00
+        y: 1.67
+    - rid: 1000000000000000125
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 172.52
+        x: -0.55
+        y: 1.78
+    - rid: 1000000000000000126
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 172.52
+        x: 0.00
+        y: 1.78
+    - rid: 1000000000000000127
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 172.52
+        x: 0.55
+        y: 1.78
+    - rid: 1000000000000000128
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 174.02
+        x: 0.00
+        y: 1.12
+    - rid: 1000000000000000129
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 175.52
+        x: 0.00
+        y: 0.84
+    - rid: 1000000000000000130
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 175.52
+        x: 0.00
+        y: 1.45
+    - rid: 1000000000000000131
+      type: {class: WallEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 175.52
+        x: 0.00
+        y: 2.06
+    - rid: 1000000000000000132
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 177.02
+        x: 0.36
+        y: 1.43
+    - rid: 1000000000000000133
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 178.52
+        x: -0.36
+        y: 1.43
+    - rid: 1000000000000000134
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 180.02
+        x: 0.00
+        y: 1.06
+    - rid: 1000000000000000135
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 181.52
+        x: 0.00
+        y: 1.75
+    - rid: 1000000000000000136
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 183.02
+        x: 0.00
+        y: 1.06
+    - rid: 1000000000000000137
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 184.52
+        x: 0.00
+        y: 1.75
+    - rid: 1000000000000000138
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 186.02
+        x: 0.00
+        y: 1.06
+    - rid: 1000000000000000139
+      type: {class: BangEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 187.72
+        x: 0.00
+        y: 1.43
+        requiredBangs: 2
+        allowedSeconds: 1.50
+    - rid: 1000000000000000140
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 189.77
+        x: -0.30
+        y: 1.43
+    - rid: 1000000000000000141
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 190.52
+        x: -0.15
+        y: 1.43
+    - rid: 1000000000000000142
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 191.27
+        x: 0.00
+        y: 1.43
+    - rid: 1000000000000000143
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 192.02
+        x: 0.15
+        y: 1.43
+    - rid: 1000000000000000144
+      type: {class: RingEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 192.39
+        x: 0.30
+        y: 1.43
+    - rid: 1000000000000000145
+      type: {class: BangEvent, ns: , asm: Assembly-CSharp}
+      data:
+        arrivalTimeSeconds: 195.53
+        x: 0.00
+        y: 1.43
+        requiredBangs: 4
+        allowedSeconds: 2.00
 --- !u!4 &470070481
 Transform:
   m_ObjectHideFlags: 0
@@ -958,7 +1993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MusicManager
   music: {fileID: 1033126038}
-  musicOffsetSeconds: 5
+  musicOffsetSeconds: 12
 --- !u!1001 &1652710375
 PrefabInstance:
   m_ObjectHideFlags: 0

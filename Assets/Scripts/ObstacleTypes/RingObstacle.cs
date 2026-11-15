@@ -6,6 +6,8 @@ public class RingObstacle : MonoBehaviour, IObstacle
 
     private bool ringPassed = false;
 
+    public void Configure(ObstacleEvent obstacleEvent) { }
+
     public bool ShouldMoveTowardsPlayer()
     {
         return true;
@@ -15,17 +17,15 @@ public class RingObstacle : MonoBehaviour, IObstacle
     {
         if (ringPassed) return;
 
-        // passed through / missed ring?
-        if (transform.position.z <= 0)
+        Vector3 head = FindFirstObjectByType<HeadBangDetector>().transform.position;
+        Bounds opening = ringPassthroughCollider.bounds;
+        if (opening.Contains(head))
         {
-            HeadBangDetector player = FindFirstObjectByType<HeadBangDetector>();
-
-            if (!ringPassthroughCollider.bounds.Contains(player.transform.position))
-            {
-                LifeManager lifeManager = FindFirstObjectByType<LifeManager>();
-                lifeManager.Lives--;
-            }
-
+            ringPassed = true;
+        }
+        else if (opening.max.z < head.z)
+        {
+            FindFirstObjectByType<LifeManager>().Lives--;
             ringPassed = true;
         }
     }

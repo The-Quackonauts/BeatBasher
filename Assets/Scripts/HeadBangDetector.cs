@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[DefaultExecutionOrder(-100)]
 public class HeadBangDetector : MonoBehaviour
 {
     public AudioSource bashSoundEffect;
@@ -28,8 +29,8 @@ public class HeadBangDetector : MonoBehaviour
         float delta = Mathf.DeltaAngle(lastPitch, pitch);
         lastPitch = pitch;
 
-        // Backward movement immediately rearms detection
-        if (delta < 0f)
+        // Backward movement rearms detection (non-tiny)
+        if (delta < -2f)
         {
             armed = true;
             history.Clear();

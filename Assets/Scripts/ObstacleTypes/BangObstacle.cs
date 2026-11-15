@@ -16,11 +16,19 @@ public class BangObstacle : MonoBehaviour, IObstacle
     private int previousHeadBangCount = 0;
     private float headbangingStartedTimestamp;
 
+    public void Configure(ObstacleEvent obstacleEvent)
+    {
+        BangEvent bangEvent = (BangEvent)obstacleEvent;
+        headBangLeftToDo = bangEvent.requiredBangs;
+        maximumTimeAllowed = bangEvent.allowedSeconds;
+        bangText.text = "BANG!\n" + headBangLeftToDo;
+    }
+
     public bool ShouldMoveTowardsPlayer()
     {
-        float dist = transform.position.z;
+        float dist = transform.position.z - GameObject.FindWithTag("MainCamera").transform.position.z;
 
-        if (dist < stopForHeadBangingAt && !headBangingFailed)
+        if ((dist < stopForHeadBangingAt || headBangOngoing) && !headBangingFailed)
         {
             if (headBangLeftToDo > 0)
             {
@@ -36,8 +44,6 @@ public class BangObstacle : MonoBehaviour, IObstacle
             else
             {
                 headBangOngoing = false;
-                wallToHideOnceCompleted.SetActive(false);
-
                 return true;
             }
         }
@@ -49,25 +55,34 @@ public class BangObstacle : MonoBehaviour, IObstacle
     {
         if (!headBangOngoing) return;
 
-        // check if timed out
-        if (Time.time  - headbangingStartedTimestamp > maximumTimeAllowed)
-        {
-            headBangingFailed = true;
-
-            LifeManager lifeManager = FindFirstObjectByType<LifeManager>();
-            lifeManager.Lives--;
-            headBangOngoing = false;
-        }
-
-        // subtract headbangs if any happened in the collider
-        bool playerIsInTheCollider = bashingCollider.bounds.Contains(GameObject.FindWithTag("MainCamera").transform.position);
-        int currentHeadBangTotal = GameObject.FindWithTag("MainCamera").GetComponent<HeadBangDetector>().headbangCount;
+        // Count nods while the head lines up with the opening.
+        HeadBangDetector player = GameObject.FindWithTag("MainCamera").GetComponent<HeadBangDetector>();
+        Bounds box = bashingCollider.bounds;
+        Vector3 head = player.transform.position;
+        bool playerIsInTheCollider = head.x >= box.min.x && head.x <= box.max.x &&
+                                     head.y >= box.min.y && head.y <= box.max.y;
+        int currentHeadBangTotal = player.headbangCount;
         int newHeadBangs = currentHeadBangTotal - previousHeadBangCount;
         if (newHeadBangs > 0 && playerIsInTheCollider)
         {
-            headBangLeftToDo -= newHeadBangs;
+            headBangLeftToDo = Mathf.Max(0, headBangLeftToDo - newHeadBangs);
             bangText.text = "BANG!\n" + headBangLeftToDo;
         }
         previousHeadBangCount = currentHeadBangTotal;
+
+        if (headBangLeftToDo <= 0)
+        {
+            wallToHideOnceCompleted.SetActive(false);
+            headBangOngoing = false;
+            return;
+        }
+
+        // check if timed out
+        if (Time.time - headbangingStartedTimestamp > maximumTimeAllowed)
+        {
+            headBangingFailed = true;
+            FindFirstObjectByType<LifeManager>().Lives--;
+            headBangOngoing = false;
+        }
     }
 }

@@ -6,6 +6,8 @@ public class WallObstacle : MonoBehaviour, IObstacle
 
     private bool wallPassed = false;
 
+    public void Configure(ObstacleEvent obstacleEvent) { }
+
     public bool ShouldMoveTowardsPlayer()
     {
         return true;
@@ -15,16 +17,15 @@ public class WallObstacle : MonoBehaviour, IObstacle
     {
         if (wallPassed) return;
 
-        // hit wall?
-        if (transform.position.z <= 0)
+        Vector3 head = FindFirstObjectByType<HeadBangDetector>().transform.position;
+        Bounds wall = wallCollider.bounds;
+        if (wall.Contains(head))
         {
-            HeadBangDetector player = FindFirstObjectByType<HeadBangDetector>();
-            if (wallCollider.bounds.Contains(player.transform.position))
-            {
-                LifeManager lifeManager = FindFirstObjectByType<LifeManager>();
-                lifeManager.Lives--;
-            }
-
+            FindFirstObjectByType<LifeManager>().Lives--;
+            wallPassed = true;
+        }
+        else if (wall.max.z < head.z)
+        {
             wallPassed = true;
         }
     }
