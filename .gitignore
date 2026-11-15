@@ -8,6 +8,7 @@
 .utmp/
 /[Ll]ibrary/
 /[Tt]emp/
+/scripts/
 /[Oo]bj/
 /[Bb]uild/
 /[Bb]uilds/

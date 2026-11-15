@@ -1,47 +1,69 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ObstacleSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject[] obstaclePrefabs;
-    [SerializeField] private Vector3 obstacleSpawnBasePosition;
-    [SerializeField] private Vector3 obstacleMoveVectorPerSecond;
-    [SerializeField] private float xAxisRandomOffset = 0.42f;
-    [SerializeField] private float yAxisDownwardRandomOffset = 0.7f;
+    [SerializeField] private MusicManager musicManager;
+    [SerializeField] private GameObject ringPrefab;
+    [SerializeField] private GameObject wallPrefab;
+    [SerializeField] private GameObject bangPrefab;
+    [SerializeField] private float spawnDistance = 20f;
+    [SerializeField] private Vector3 obstacleMoveVectorPerSecond = new(0f, 0f, -2f);
+    [SerializeReference] private List<ObstacleEvent> schedule = new();
 
-    void Update()
+    private List<ObstacleEvent> orderedSchedule;
+    private int nextEventIndex;
+    private Transform player;
+
+    private void Start()
     {
-        // spawn new obstacles
-        if (((int) Random.Range(0f, 250f)) == 42)
-        {
-            int randomIndex = Random.Range(0, obstaclePrefabs.Length);
-            GameObject selectedPrefab = obstaclePrefabs[randomIndex];
+        player = FindFirstObjectByType<HeadBangDetector>().transform;
+        orderedSchedule = new List<ObstacleEvent>(schedule);
+        orderedSchedule.Sort((a, b) => a.arrivalTimeSeconds.CompareTo(b.arrivalTimeSeconds));
+    }
 
-            // apply random object offset
-            float xOffset = Random.Range(-xAxisRandomOffset, xAxisRandomOffset);
-            float yOffset = Random.Range(-yAxisDownwardRandomOffset, 0);
-            Vector3 obstaclePos = obstacleSpawnBasePosition;
-            obstaclePos.x += xOffset;
-            obstaclePos.y += yOffset;
-
-            GameObject newObstacle = Instantiate(selectedPrefab, obstaclePos, Quaternion.identity);
-            newObstacle.transform.parent = transform;
-        }
-
+    private void Update()
+    {
+        float songTime = musicManager.getMusicCurrentTime();
         // move, tick & clean-up children
-        for (int i = 0, count = transform.childCount; i < count; i++)
+        for (int i = transform.childCount - 1; i >= 0; i--)
         {
             Transform child = transform.GetChild(i);
-            IObstacle obstacleScript = child.gameObject.GetComponent<IObstacle>();
+            IObstacle obstacle = child.GetComponent<IObstacle>();
+            if (obstacle.ShouldMoveTowardsPlayer())
+                child.position += obstacleMoveVectorPerSecond * Time.deltaTime;
 
-            if (obstacleScript.ShouldMoveTowardsPlayer())
-                child.position += obstacleMoveVectorPerSecond * Time.fixedDeltaTime;
-
-            obstacleScript.Tick(Time.fixedDeltaTime);
-
-            if (child.position.z <= -3)
+            obstacle.Tick(Time.deltaTime);
+            if (child.position.z <= -3f)
             {
                 Destroy(child.gameObject);
             }
         }
+
+        // spawn stuff that is upcoming
+        float travelTime = spawnDistance / -obstacleMoveVectorPerSecond.z;
+        while (nextEventIndex < orderedSchedule.Count &&
+               orderedSchedule[nextEventIndex].arrivalTimeSeconds <= songTime + travelTime)
+        {
+            Spawn(orderedSchedule[nextEventIndex], songTime);
+            nextEventIndex++;
+        }
+    }
+
+    private void Spawn(ObstacleEvent entry, float songTime)
+    {
+        GameObject prefab = entry switch
+        {
+            RingEvent => ringPrefab,
+            WallEvent => wallPrefab,
+            BangEvent => bangPrefab,
+            _ => null
+        };
+
+        float z = player.position.z - obstacleMoveVectorPerSecond.z * (entry.arrivalTimeSeconds - songTime);
+        GameObject instance = Instantiate(prefab, new Vector3(entry.x, entry.y, z),
+            Quaternion.identity, transform);
+        IObstacle obstacle = instance.GetComponent<IObstacle>();
+        obstacle.Configure(entry);
     }
 }
