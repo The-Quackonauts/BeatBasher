@@ -28,6 +28,8 @@
  - [ ] first obstacle has little crosses to show have to go through it, and the wall 
  - [X] correct font for time display, and no time: its very apparent
  - [ ] explosion when you headbang too slowly
+ - [ ] every time you go through the tube have the colour change 
+ - [X] Chnage the bang obstacle to use actual rings
 
 ## freddy
  - [x] Lives with Hearts that stop glowing when theyre gone

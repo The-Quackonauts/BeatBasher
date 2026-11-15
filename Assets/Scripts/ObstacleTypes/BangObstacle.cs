@@ -6,7 +6,9 @@ public class BangObstacle : MonoBehaviour, IObstacle
 {
     [SerializeField] private BoxCollider bashingCollider;
     [SerializeField] private TextMeshPro bangText;
-    [SerializeField] private GameObject wallToHideOnceCompleted;
+    [SerializeField] private GameObject InnerRing;
+    [SerializeField] private GameObject MiddleRing;
+    [SerializeField] private GameObject BackWall;
     [SerializeField] private float stopForHeadBangingAt = 0.5f;
     [SerializeField] private float maximumTimeAllowed = 1.5f;
 
@@ -30,7 +32,7 @@ public class BangObstacle : MonoBehaviour, IObstacle
         BangEvent bangEvent = (BangEvent)obstacleEvent;
         headBangLeftToDo = bangEvent.requiredBangs;
         maximumTimeAllowed = bangEvent.allowedSeconds;
-        bangText.text ="\n" + headBangLeftToDo;
+        bangText.text ="" + headBangLeftToDo;
 
         foreach (Renderer renderer in bangRenderer)
         {
@@ -83,14 +85,16 @@ public class BangObstacle : MonoBehaviour, IObstacle
             ScoreManager score = FindFirstObjectByType<ScoreManager>();
             for (int i = 0; i < countedBangs; i++) score.RecordSuccess(10);
             headBangLeftToDo -= countedBangs;
-            bangText.text = "\n" + headBangLeftToDo;
+            bangText.text = "" + headBangLeftToDo;
         }
         previousHeadBangCount = currentHeadBangTotal;
 
         if (headBangLeftToDo <= 0)
         {
             FindFirstObjectByType<ScoreManager>().RecordSuccess(25);
-            wallToHideOnceCompleted.SetActive(false);
+            InnerRing.SetActive(false);
+            MiddleRing.SetActive(false);
+            BackWall.SetActive(false);
             bangText.gameObject.SetActive(false);
             headBangOngoing = false;
             return;
