@@ -23,10 +23,10 @@
 # POLISH
 
 ## calum
- - [ ] have the rings be rings and all the obstacles be actual shapes
- - [ ] glow obstacles that rotate colour 
+ - [x] have the rings be rings and all the obstacles be actual shapes
+ - [x] glow obstacles now use a set colour function 
  - [ ] first obstacle has little crosses to show have to go through it, and the wall 
- - [ ] correct font for time display, and no time: its very apparent
+ - [X] correct font for time display, and no time: its very apparent
  - [ ] explosion when you headbang too slowly
 
 ## freddy
