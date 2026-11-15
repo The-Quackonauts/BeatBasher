@@ -73,6 +73,7 @@ public class BangObstacle : MonoBehaviour, IObstacle
         if (headBangLeftToDo <= 0)
         {
             wallToHideOnceCompleted.SetActive(false);
+            bangText.gameObject.SetActive(false);
             headBangOngoing = false;
             return;
         }

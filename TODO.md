@@ -30,8 +30,8 @@
  - [ ] explosion when you headbang too slowly
 
 ## freddy
- - [ ] Lives with Hearts that stop glowing when theyre gone
- - [ ] get rid of the text in the bangs once theyre completed as well
+ - [x] Lives with Hearts that stop glowing when theyre gone
+ - [x] get rid of the text in the bangs once theyre completed as well
  - [ ] score system
  - [ ] countdown before things start
  - [ ] improved yeah! whoo! wow! sound effects when you headbang
