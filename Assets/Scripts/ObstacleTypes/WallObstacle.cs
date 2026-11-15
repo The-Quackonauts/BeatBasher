@@ -6,25 +6,19 @@ public class WallObstacle : MonoBehaviour, IObstacle
 
     private bool wallPassed = false;
 
-    private GameObject colourManager;
+    private ColourManager colourManager;
     private Renderer[] wallRenderer;
 
     private void Awake()
     {
         wallRenderer = GetComponentsInChildren<Renderer>();
-        colourManager = GameObject.FindGameObjectWithTag("ColourManager");
+        colourManager = FindFirstObjectByType<ColourManager>();
     }
 
 
     public void Configure(ObstacleEvent obstacleEvent) 
     {
-        foreach (Renderer renderer in wallRenderer)
-        {
-            foreach(Material material in renderer.materials)
-            { 
-                renderer.material.SetColor("_EmissionColor", colourManager.GetComponent<ColourManager>().getCurrentColour() * 100);
-            }
-        }
+        UpdateColour();
     }
 
     public bool ShouldMoveTowardsPlayer()
@@ -34,6 +28,7 @@ public class WallObstacle : MonoBehaviour, IObstacle
 
     public void Tick(float deltaTime)
     {
+        UpdateColour();
         if (wallPassed) return;
 
         Vector3 head = FindFirstObjectByType<HeadBangDetector>().transform.position;
@@ -48,5 +43,11 @@ public class WallObstacle : MonoBehaviour, IObstacle
             FindFirstObjectByType<ScoreManager>().RecordSuccess(10);
             wallPassed = true;
         }
+    }
+
+    private void UpdateColour()
+    {
+        foreach (Renderer renderer in wallRenderer)
+            renderer.material.SetColor("_EmissionColor", colourManager.getCurrentColour() * 100);
     }
 }

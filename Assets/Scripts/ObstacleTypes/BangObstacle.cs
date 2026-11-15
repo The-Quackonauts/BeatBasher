@@ -18,13 +18,13 @@ public class BangObstacle : MonoBehaviour, IObstacle
     private int previousHeadBangCount = 0;
     private float headbangingStartedTimestamp;
 
-    private GameObject colourManager;
+    private ColourManager colourManager;
     private Renderer[] bangRenderer;
 
     private void Awake()
     {
         bangRenderer = GetComponentsInChildren<Renderer>();
-        colourManager = GameObject.FindGameObjectWithTag("ColourManager");
+        colourManager = FindFirstObjectByType<ColourManager>();
     }
 
     public void Configure(ObstacleEvent obstacleEvent)
@@ -34,10 +34,7 @@ public class BangObstacle : MonoBehaviour, IObstacle
         maximumTimeAllowed = bangEvent.allowedSeconds;
         bangText.text ="" + headBangLeftToDo;
 
-        foreach (Renderer renderer in bangRenderer)
-        {
-            renderer.material.SetColor("_EmissionColor", colourManager.GetComponent<ColourManager>().getCurrentColour() * 100);
-        }
+        UpdateColour();
     }
 
     public bool ShouldMoveTowardsPlayer()
@@ -69,6 +66,7 @@ public class BangObstacle : MonoBehaviour, IObstacle
 
     public void Tick(float deltaTime)
     {
+        UpdateColour();
         if (!headBangOngoing) return;
 
         // Count nods while the head lines up with the opening.
@@ -107,5 +105,11 @@ public class BangObstacle : MonoBehaviour, IObstacle
             FindFirstObjectByType<LifeManager>().Lives--;
             headBangOngoing = false;
         }
+    }
+
+    private void UpdateColour()
+    {
+        foreach (Renderer renderer in bangRenderer)
+            renderer.material.SetColor("_EmissionColor", colourManager.getCurrentColour() * 100);
     }
 }
